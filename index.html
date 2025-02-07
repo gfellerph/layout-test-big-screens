@@ -208,23 +208,9 @@ https://cdn.jsdelivr.net/npm/@swisspost/design-system-styles@next/cargo-external
         </p>
         <div class="ch-80">80ch</div>
 
-        <p>
-          <label class="form-label" for="range">Content-width</label>
-          <input
-            type="range"
-            id="range"
-            class="form-range"
-            value="1440"
-            step="8"
-            min="1024"
-            max="2560"
-          />
-          <span class="form-hint" id="range-text">50</span>
-        </p>
-
         <h2>List of changes</h2>
         <ul>
-          <li>container max width: <code>1408px</code></li>
+          <li>container max width: <code>1376px</code></li>
           <li>1024px and up: container padding <code>48px</code></li>
           <li>
             new <code>.section</code> class with max-width: <code>1920px</code>
@@ -310,7 +296,7 @@ https://cdn.jsdelivr.net/npm/@swisspost/design-system-styles@next/cargo-external
           <div class="col-6 palette-alternate">
             <img src="hero.jpg" alt="" />
           </div>
-          <div class="col-6 palette-alternate">
+          <div class="col-6 palette-alternate py-32">
             <h3>Lorem ipsum dolor sit.</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
@@ -324,11 +310,14 @@ https://cdn.jsdelivr.net/npm/@swisspost/design-system-styles@next/cargo-external
       </div>
     </div>
 
+    <h2 class="container">Absolutely positioned image</h2>
+
     <div class="section palette-brand">
+      <img src="hero.jpg" alt="" class="left-pull-img" />
       <div class="container">
         <div class="row">
-          <div class="col-6"><img src="hero.jpg" alt="" /></div>
-          <div class="col-6">
+          <div class="col-6 pull left"></div>
+          <div class="col-6 py-32">
             <h3>Lorem ipsum dolor sit.</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat

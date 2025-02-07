@@ -6,6 +6,11 @@
   display: block;
 }
 
+img {
+  object-fit: cover;
+  object-position: top center;
+}
+
 code {
   background-color: rgba(0, 0, 0, 0.125);
   display: inline-block;
@@ -24,6 +29,7 @@ code {
 .section {
   max-width: 1920px;
   margin-inline: auto;
+  position: relative;
 }
 
 @media screen and (min-width: 1024px) {
@@ -31,4 +37,19 @@ code {
     padding-inline: 48px;
     max-width: 1376px;
   }
+}
+
+.pull {
+  position: relative;
+}
+
+.pull.left {
+  left: 0;
+}
+
+.left-pull-img {
+  width: calc(50% - 12px);
+  left: 0;
+  position: absolute;
+  height: 100%;
 }
