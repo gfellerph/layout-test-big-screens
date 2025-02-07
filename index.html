@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="
+https://cdn.jsdelivr.net/npm/@swisspost/design-system-styles@next/cargo-external.min.css
+"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+      import { defineCustomElements as definePostComponents } from "https://cdn.jsdelivr.net/npm/@swisspost/design-system-components@next/loader/index.js";
+      definePostComponents();
+    </script>
+    <script type="module" src="main.js"></script>
+  </head>
+  <body>
+    <post-header>
+      <!-- Logo -->
+      <post-logo slot="post-logo" url="/">Homepage</post-logo>
+
+      <!-- Meta navigation -->
+      <ul class="list-inline" slot="meta-navigation">
+        <li><a href="">Jobs</a></li>
+        <li><a href="">Über uns</a></li>
+      </ul>
+
+      <!-- Menu button for mobile -->
+      <post-togglebutton slot="post-togglebutton">
+        <span class="visually-hidden-sm">Menu</span>
+        <post-icon
+          aria-hidden="true"
+          name="burger"
+          data-showwhen="untoggled"
+        ></post-icon>
+        <post-icon
+          aria-hidden="true"
+          name="closex"
+          data-showwhen="toggled"
+        ></post-icon>
+      </post-togglebutton>
+
+      <!-- Language switch -->
+      <post-language-switch
+        caption="Caption"
+        description="Description"
+        variant="list"
+        name="language-switch-example"
+        slot="post-language-switch"
+      >
+        <post-language-option active="true" code="de" name="Deutsch"
+          >DE</post-language-option
+        >
+        <post-language-option active="false" code="fr" name="French"
+          >FR</post-language-option
+        >
+        <post-language-option active="false" code="it" name="Italiano"
+          >IT</post-language-option
+        >
+        <post-language-option active="false" code="en" name="English"
+          >EN</post-language-option
+        >
+      </post-language-switch>
+
+      <!-- Application title (optional) -->
+      <h1 slot="title">Application title</h1>
+
+      <!-- Custom content (optional) -->
+      <ul class="list-inline">
+        <li>
+          <a href="#">
+            <span class="visually-hidden-sm">Search</span>
+            <post-icon aria-hidden="true" name="search"></post-icon>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="visually-hidden-sm">Login</span>
+            <post-icon aria-hidden="true" name="login"></post-icon>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Main navigation -->
+      <post-mainnavigation caption="Hauptnavigation">
+        <button
+          type="button"
+          slot="back-button"
+          class="btn btn-sm btn-tertiary"
+        >
+          <post-icon aria-hidden="true" name="arrowright"></post-icon> Back
+        </button>
+        <post-list title-hidden="">
+          <h2>Main Navigation</h2>
+          <!-- Link only level 1 -->
+          <post-list-item><a href="/briefe">Briefe</a></post-list-item>
+          <post-list-item><a href="/pakete">Pakete</a></post-list-item>
+
+          <!-- Level 1 with megadropdown -->
+          <post-list-item>
+            <post-megadropdown-trigger for="briefe"
+              >Briefe</post-megadropdown-trigger
+            >
+            <post-megadropdown id="briefe">
+              <button slot="back-button" class="btn btn-tertiary px-0 btn-sm">
+                <post-icon name="arrowright"></post-icon>
+                Back
+              </button>
+              <post-closebutton slot="close-button"
+                >Schliessen</post-closebutton
+              >
+              <h2 slot="megadropdown-title">Briefe title</h2>
+              <post-list>
+                <h3>Briefe senden</h3>
+                <post-list-item
+                  ><a href="/sch">Briefe Schweiz</a></post-list-item
+                >
+                <post-list-item
+                  ><a href="/kl">Kleinwaren Ausland</a></post-list-item
+                >
+                <post-list-item><a href="">Waren Ausland</a></post-list-item>
+                <post-list-item
+                  ><a href="">Express und Kurier</a></post-list-item
+                >
+              </post-list>
+              <post-list>
+                <h3><a href="/schritt-für-schritt">Schritt für Schritt</a></h3>
+                <post-list-item
+                  ><a href="/sch">Pakete Schweiz</a></post-list-item
+                >
+                <post-list-item
+                  ><a href="/kl">Kleinwaren Ausland</a></post-list-item
+                >
+                <post-list-item><a href="">Waren Ausland</a></post-list-item>
+                <post-list-item
+                  ><a href="">Express und Kurier</a></post-list-item
+                >
+              </post-list>
+            </post-megadropdown>
+          </post-list-item>
+          <post-list-item>
+            <post-megadropdown-trigger for="pakete"
+              >Pakete</post-megadropdown-trigger
+            >
+            <post-megadropdown id="pakete">
+              <button slot="back-button" class="btn btn-tertiary px-0 btn-sm">
+                <post-icon name="arrowright"></post-icon>
+                Back
+              </button>
+              <post-closebutton slot="close-button"
+                >Schliessen</post-closebutton
+              >
+              <h2 slot="megadropdown-title">Pakete title</h2>
+              <post-list>
+                <h3>Pakete senden</h3>
+                <post-list-item
+                  ><a href="/sch">Pakete Schweiz</a></post-list-item
+                >
+                <post-list-item
+                  ><a href="/kl">Kleinwaren Ausland</a></post-list-item
+                >
+                <post-list-item><a href="">Waren Ausland</a></post-list-item>
+                <post-list-item
+                  ><a href="">Express und Kurier</a></post-list-item
+                >
+              </post-list>
+              <post-list>
+                <h3><a href="/schritt-für-schritt">Schritt für Schritt</a></h3>
+                <post-list-item
+                  ><a href="/sch">Pakete Schweiz</a></post-list-item
+                >
+                <post-list-item
+                  ><a href="/kl">Kleinwaren Ausland</a></post-list-item
+                >
+                <post-list-item><a href="">Waren Ausland</a></post-list-item>
+                <post-list-item
+                  ><a href="">Express und Kurier</a></post-list-item
+                >
+              </post-list>
+            </post-megadropdown>
+          </post-list-item>
+        </post-list>
+      </post-mainnavigation>
+    </post-header>
+
+    <div class="section section-padding-reset hero">
+      <img src="/hero.jpg" alt="" />
+    </div>
+
+    <section class="section">
+      <div class="container my-64 py-64">
+        <h1>Container</h1>
+        <h2>80 character reference</h2>
+        <p>
+          IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+        </p>
+        <p>
+          00000000000000000000000000000000000000000000000000000000000000000000000000000000
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, vo.
+        </p>
+        <p>
+          MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+        </p>
+        <div class="ch-80">80ch</div>
+
+        <p>
+          <label class="form-label" for="range">Content-width</label>
+          <input
+            type="range"
+            id="range"
+            class="form-range"
+            value="1440"
+            step="8"
+            min="1024"
+            max="2560"
+          />
+          <span class="form-hint" id="range-text">50</span>
+        </p>
+
+        <h2>List of changes</h2>
+        <ul>
+          <li>container max width: <code>1408px</code></li>
+          <li>1024px and up: container padding <code>48px</code></li>
+          <li>
+            new <code>.section</code> class with max-width: <code>1920px</code>
+          </li>
+        </ul>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+          voluptates amet iste natus voluptatibus, asperiores tempore expedita
+          consequatur unde esse aliquid accusamus dolorum voluptate eligendi!
+          Ratione distinctio in atque consequatur earum dolores vitae sint rem
+          voluptatum beatae praesentium excepturi facilis repellendus magnam
+          exercitationem nulla, maiores impedit? Nesciunt tempore sed
+          accusantium est corrupti dolor, officiis quaerat architecto culpa
+          natus repellendus autem aliquid enim blanditiis voluptatem eligendi
+          fugiat ducimus quod doloremque sit nemo vel inventore dolorum. Animi
+          consequuntur dolores, corporis perferendis voluptatum omnis, molestiae
+          aspernatur nemo recusandae unde repellendus temporibus exercitationem
+          aperiam error. Ipsa nesciunt architecto.
+        </p>
+      </div>
+    </section>
+
+    <section class="section palette-brand">
+      <div class="container my-64 py-64">
+        <h2>Container</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
+          voluptates amet iste natus voluptatibus, asperiores tempore expedita
+          consequatur unde esse aliquid accusamus dolorum voluptate eligendi!
+          Ratione distinctio in atque consequatur earum dolores vitae sint rem
+          voluptatum beatae praesentium excepturi facilis repellendus magnam
+          exercitationem nulla, maiores impedit? Nesciunt tempore sed
+          accusantium est corrupti dolor, officiis quaerat architecto culpa
+          natus repellendus autem aliquid enim blanditiis voluptatem eligendi
+          fugiat ducimus quod doloremque sit nemo vel inventore dolorum. Animi
+          consequuntur dolores, corporis perferendis voluptatum omnis, molestiae
+          aspernatur nemo recusandae unde repellendus temporibus exercitationem
+          aperiam error. Ipsa nesciunt architecto.
+        </p>
+        <div class="row mt-32">
+          <div class="col">
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
+              esse modi quaerat commodi enim magnam aut nemo expedita possimus
+              debitis.
+            </p>
+            <p>
+              <a href="#" class="btn btn-secondary">More info</a>
+            </p>
+          </div>
+          <div class="col">
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+              necessitatibus, delectus neque, nisi voluptatibus optio laborum
+              veniam rerum ipsam ad sint commodi similique ducimus dolor magni
+              provident exercitationem dicta esse.
+            </p>
+            <p>
+              <a href="#" class="btn btn-secondary">More info</a>
+            </p>
+          </div>
+          <div class="col">
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+              necessitatibus, delectus neque, nisi voluptatibus optio laborum
+              veniam rerum ipsam ad sint commodi similique ducimus dolor magni
+              provident exercitationem dicta esse.
+            </p>
+            <p>
+              <a href="#" class="btn btn-secondary">More info</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 palette-alternate">
+            <img src="hero.jpg" alt="" />
+          </div>
+          <div class="col-6 palette-alternate">
+            <h3>Lorem ipsum dolor sit.</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+              voluptate, deserunt similique officia necessitatibus corrupti
+              sequi ipsa! Magnam debitis perferendis vitae. Debitis a enim hic
+              nemo quia id libero excepturi, unde eius molestiae, voluptatibus
+              deleniti autem dolor, dolores vel architecto?
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section palette-brand">
+      <div class="container">
+        <div class="row">
+          <div class="col-6"><img src="hero.jpg" alt="" /></div>
+          <div class="col-6">
+            <h3>Lorem ipsum dolor sit.</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+              voluptate, deserunt similique officia necessitatibus corrupti
+              sequi ipsa! Magnam debitis perferendis vitae. Debitis a enim hic
+              nemo quia id libero excepturi, unde eius molestiae, voluptatibus
+              deleniti autem dolor, dolores vel architecto?
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <post-footer label="Footer label">
+      <span slot="grid-1-title">Title 1</span>
+      <post-list slot="grid-1">
+        <h3>Title 1</h3>
+
+        <post-list-item>
+          <a href="#">Text link 1</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 2</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 3</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 4</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 5</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 6</a>
+        </post-list-item>
+      </post-list>
+
+      <span slot="grid-2-title">Title 2</span>
+      <post-list slot="grid-2">
+        <h3>Title 2</h3>
+
+        <post-list-item>
+          <a href="#">Text link 1</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 2</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 3</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 4</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 5</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 6</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 7</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 8</a>
+        </post-list-item>
+      </post-list>
+
+      <span slot="grid-3-title">Title 3</span>
+      <post-list slot="grid-3">
+        <h3>Title 3</h3>
+
+        <post-list-item>
+          <a href="#">Text link 1</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 2</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 3</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 4</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 5</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 6</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 7</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 8</a>
+        </post-list-item>
+      </post-list>
+
+      <span slot="grid-4-title">Title 4</span>
+      <post-list slot="grid-4">
+        <h3>Title 4</h3>
+
+        <post-list-item>
+          <a href="#">Text link 1</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 2</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 3</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 4</a>
+        </post-list-item>
+
+        <post-list-item>
+          <a href="#">Text link 5</a>
+        </post-list-item>
+      </post-list>
+
+      <!-- socialmedia links -->
+      <post-list slot="socialmedia">
+        <h3>Follow us</h3>
+        <post-list-item>
+          <a
+            href="https://www.facebook.com/swisspost"
+            class="btn btn-primary btn-icon"
+          >
+            <post-icon aria-hidden="true" name="8004"></post-icon>
+            <span class="visually-hidden">Facebook</span>
+          </a>
+        </post-list-item>
+        <post-list-item>
+          <a
+            href="https://www.instagram.com/swisspost/"
+            class="btn btn-primary btn-icon"
+          >
+            <post-icon aria-hidden="true" name="8007"></post-icon>
+            <span class="visually-hidden">Instagram</span>
+          </a>
+        </post-list-item>
+        <post-list-item>
+          <a
+            href="http://www.youtube.com/swisspost"
+            class="btn btn-primary btn-icon"
+          >
+            <post-icon aria-hidden="true" name="8002"></post-icon>
+            <span class="visually-hidden">Youtube</span>
+          </a>
+        </post-list-item>
+        <post-list-item>
+          <a
+            href="https://www.snapchat.com/add/swisspostjobs"
+            class="btn btn-primary btn-icon"
+          >
+            <post-icon aria-hidden="true" name="8017"></post-icon>
+            <span class="visually-hidden">Snapchat</span>
+          </a>
+        </post-list-item>
+        <post-list-item>
+          <a
+            href="https://twitter.com/PostSchweiz"
+            class="btn btn-primary btn-icon"
+          >
+            <post-icon aria-hidden="true" name="8000"></post-icon>
+            <span class="visually-hidden">Titter X</span>
+          </a>
+        </post-list-item>
+        <post-list-item>
+          <a
+            href="https://www.linkedin.com/company/swiss-post"
+            class="btn btn-primary btn-icon"
+          >
+            <post-icon aria-hidden="true" name="8005"></post-icon>
+            <span class="visually-hidden">Linkedin</span>
+          </a>
+        </post-list-item>
+        <post-list-item>
+          <a
+            href="https://www.xing.com/companies/dieschweizerischepost"
+            class="btn btn-primary btn-icon"
+          >
+            <post-icon aria-hidden="true" name="8001"></post-icon>
+            <span class="visually-hidden">Xing</span>
+          </a>
+        </post-list-item>
+        <post-list-item>
+          <a href="mailto:noreply@post.ch" class="btn btn-primary btn-icon">
+            <post-icon aria-hidden="true" name="letter"></post-icon>
+            <span class="visually-hidden">E-Mail</span>
+          </a>
+        </post-list-item>
+      </post-list>
+
+      <!-- app links -->
+      <post-list slot="app">
+        <h3>Download app</h3>
+        <post-list-item>
+          <a
+            class="app-store-badge"
+            href="https://play.google.com/store/apps/details?id=com.nth.swisspost&amp;hl=de_CH&amp;pli=1"
+          >
+            <img
+              src="https://next.design-system.post.ch/assets/images/google-play-badge.svg"
+              alt="Google Play Store badge"
+            />
+            <span class="visually-hidden">Download the App on Google Play</span>
+          </a>
+        </post-list-item>
+        <post-list-item>
+          <a
+            class="app-store-badge"
+            href="https://apps.apple.com/ch/app/die-post/id378676700"
+          >
+            <img
+              src="https://next.design-system.post.ch/assets/images/apple-store-badge.svg"
+              alt="Apple App Store badge"
+            />
+            <span class="visually-hidden"
+              >Download the App on the Apple Store</span
+            >
+          </a>
+        </post-list-item>
+      </post-list>
+
+      <!-- sector links -->
+      <post-list slot="businesssectors">
+        <h3>Die schweizerische Post AG</h3>
+        <post-list-item>
+          <a href="https://www.postauto.ch">PostAuto</a>
+        </post-list-item>
+        <post-list-item>
+          <a href="https://www.postfinance.ch">PostFinance</a>
+        </post-list-item>
+      </post-list>
+
+      <!-- meta links -->
+      <post-list slot="meta" title-hidden="">
+        <h3>Meta</h3>
+        <post-list-item>
+          <a
+            href="https://www.post.ch/en/pages/footer/accessibility-at-swiss-post"
+            >Accessibility</a
+          >
+        </post-list-item>
+        <post-list-item>
+          <a
+            href="https://www.post.ch/en/pages/footer/general-terms-and-conditions-gtc"
+            >General Terms and Conditions</a
+          >
+        </post-list-item>
+        <post-list-item>
+          <a
+            href="https://www.post.ch/en/pages/footer/data-protection-and-disclaimer"
+            >Data protection and disclaimer</a
+          >
+        </post-list-item>
+        <post-list-item>
+          <a href="https://www.post.ch/en/pages/footer/publication-details"
+            >Publication details</a
+          >
+        </post-list-item>
+        <post-list-item>
+          <button
+            class="btn btn-link"
+            style="min-height: 0; border: 0 none; font-weight: inherit"
+          >
+            Cookie Settings
+          </button>
+        </post-list-item>
+      </post-list>
+
+      <span slot="copyright">© Copyright 2024 by Swiss Post Ltd.</span>
+      <span slot="copyright">All rights reserved.</span>
+    </post-footer>
+  </body>
+</html>
